@@ -1,4 +1,4 @@
-## got-salt-svelte
+## ampd-electron-svelte
 
 ```bash
 # first
@@ -16,4 +16,4 @@ npm run build
 npm start
 ```
 
-### Svelte version of got-salt
+### Svelte UI boilerplate on top of electron

@@ -1,7 +1,7 @@
 {
-  "name": "got-salt-svelte",
+  "name": "ampd-electron-svelte",
   "version": "0.0.1",
-  "description": "got-salt but with svelte",
+  "description": "Svelte UI boilerplate on top of electron",
   "main": "app-build/index.js",
   "private": true,
   "keywords": [],
