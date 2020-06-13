@@ -1,4 +1,4 @@
-## ampd-ui-svelte
+## ampd-electron-svelte
 
 ```bash
 npm install
@@ -10,4 +10,4 @@ npm run dev
 npm run build && npm start
 ```
 
-### Svelte UI boilerplate
+### Svelte UI boilerplate on top of electron

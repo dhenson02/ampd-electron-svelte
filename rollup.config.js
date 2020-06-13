@@ -3,7 +3,6 @@ import * as ts from 'typescript';
 import typescript from 'rollup-plugin-typescript';
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
-import livereload from 'rollup-plugin-livereload';
 import { terser } from 'rollup-plugin-terser';
 import postcss from 'rollup-plugin-postcss';
 import postcssImport from 'postcss-import';
@@ -106,37 +105,11 @@ export default {
 
         json(),
 
-        // In dev mode, call `npm run start` once
-        // the bundle has been generated
-        !production && serve(),
-
-        // Watch the `public` directory and refresh the
-        // browser on changes when not in production
-        !production && livereload('public'),
-
         // If we're building for production (npm run build
         // instead of npm run dev), minify
-        production && terser()
+        production && terser(),
     ],
     watch: {
         clearScreen: false
     }
 };
-
-function serve() {
-    let started = false;
-
-    return {
-        writeBundle() {
-            if (!started) {
-                started = true;
-
-                require('child_process').spawn('npm', ['run', 'start', '--', '--dev'], {
-                    stdio: ['ignore', 'inherit', 'inherit'],
-                    shell: true
-                });
-            }
-        }
-    };
-}
-

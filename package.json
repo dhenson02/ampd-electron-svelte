@@ -1,16 +1,18 @@
 {
-  "name": "ampd-ui-svelte",
+  "name": "ampd-electron-svelte",
   "version": "0.0.1",
-  "description": "Svelte UI boilerplate",
-  "main": "public/build/bundle.js",
+  "description": "Svelte UI boilerplate on top of electron",
+  "main": "app-build/index.js",
   "private": true,
   "keywords": [],
   "author": "Deryck H",
   "license": "MIT",
   "scripts": {
+    "tsc": "tsc --outDir app-build -d -t ESNEXT app/*.ts",
+    "tsc-dev": "tsc --outDir app-build -d -w -t ESNEXT app/*.ts",
     "build": "rollup -c",
     "dev": "rollup -c -w",
-    "start": "sirv public"
+    "start": "electron ."
   },
   "devDependencies": {
     "@babel/core": "^7.10.2",
@@ -23,6 +25,7 @@
     "@rollup/plugin-replace": "^2.3.3",
     "autoprefixer": "^9.7.4",
     "cssnano": "^4.1.10",
+    "electron": "9.0.0",
     "flow-bin": "^0.126.1",
     "postcss-font-magician": "^2.3.1",
     "postcss-url": "^8.0.0",

@@ -9,7 +9,7 @@ export interface Props {
 };
 
 export const props: Props = {
-    "name": `People, etc. 2`
+    "name": `People, etc. 3`
 };
 
 const app = new App({
