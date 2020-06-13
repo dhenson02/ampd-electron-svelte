@@ -13,13 +13,3 @@
 <Header
     {name}
     date={new Date()} />
-
-<style>
-    header {
-        color: darkred;
-    }
-
-    h1 {
-        color: cornflowerblue;
-    }
-</style>
