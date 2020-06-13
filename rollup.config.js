@@ -21,13 +21,13 @@ export default {
         : `src/main.dev.ts`,
     output: {
         sourcemap: true,
-        format: 'iife',
-        name: 'topaz',
-        file: 'public/build/bundle.js'
+        format: `iife`,
+        name: `topaz`,
+        file: `public/build/bundle.js`,
     },
     plugins: [
         replace({
-            'process.env.NODE_ENV': JSON.stringify(!production ? 'development' : 'production'),
+            'process.env.NODE_ENV': JSON.stringify(!production ? `development` : `production`),
         }),
 
         typescript(),
@@ -58,7 +58,7 @@ export default {
                     "presets": [
                         `@babel/preset-flow`,
                         [
-                            '@babel/preset-env',
+                            `@babel/preset-env`,
                             {
                                 "loose": true,
                                 // No need for babel to resolve modules
@@ -78,7 +78,7 @@ export default {
                      * These will be merged with options from the tsconfig if found.
                      */
                     "compilerOptions": {
-                        "module": 'es2020',
+                        "module": `es2020`,
                         "strict": false,
                     },
 
@@ -98,7 +98,7 @@ export default {
         // https://github.com/rollup/plugins/tree/master/packages/commonjs
         resolve({
             browser: true,
-            dedupe: ['svelte']
+            dedupe: [`svelte`]
         }),
 
         commonjs(),
