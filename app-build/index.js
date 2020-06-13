@@ -1,5 +1,6 @@
 const { app, BrowserWindow, } = require('electron');
 const path = require('path');
+const { logger } = require("./logger");
 async function createWindow() {
     // const iconUrl = url.format({
     //     pathname: path.join(__dirname, `Icon/Icon.icns`),
@@ -20,6 +21,7 @@ async function createWindow() {
     if (process.env.NODE_ENV === `development`) {
         win.webContents.openDevTools();
     }
+    logger.info(`Started app`);
 }
 app.on(`ready`, createWindow);
 app.on(`window-all-closed`, () => {
