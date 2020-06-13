@@ -1,5 +1,6 @@
 import svelte from 'rollup-plugin-svelte';
 import * as ts from 'typescript';
+import typescript from 'rollup-plugin-typescript';
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import livereload from 'rollup-plugin-livereload';
@@ -18,7 +19,7 @@ const production = !process.env.ROLLUP_WATCH;
 export default {
     input: production
         ? `src/main.js`
-        : `src/main.dev.js`,
+        : `src/main.dev.ts`,
     output: {
         sourcemap: true,
         format: 'iife',
@@ -29,6 +30,8 @@ export default {
         replace({
             'process.env.NODE_ENV': JSON.stringify(!production ? 'development' : 'production'),
         }),
+
+        typescript(),
 
         postcss({
             'plugins': [

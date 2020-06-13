@@ -1,5 +1,4 @@
 ## ampd-ui-svelte
-===
 
 ```bash
 npm install

@@ -5,14 +5,14 @@
         setContext,
     } from 'svelte';
 
-    import Header from "./Header.svelte";
-
     export let name: string = ``;
+    export let date: Date;
 </script>
 
-<Header
-    {name}
-    date={new Date()} />
+<header>
+    <h1>{name}</h1>
+    <h2>{date}</h2>
+</header>
 
 <style>
     header {
