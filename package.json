@@ -1,8 +1,8 @@
 {
   "name": "ampd-ui-svelte",
   "version": "0.0.1",
-  "description": "",
-  "main": "index.js",
+  "description": "Svelte UI boilerplate",
+  "main": "public/build/bundle.js",
   "private": true,
   "keywords": [],
   "author": "Deryck H",

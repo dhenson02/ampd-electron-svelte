@@ -9,16 +9,16 @@ import postcss from 'rollup-plugin-postcss';
 import postcssImport from 'postcss-import';
 import autoprefixer from 'autoprefixer';
 import cssnano from 'cssnano';
-// import url from 'postcss-url';
 import json from '@rollup/plugin-json';
 import replace from '@rollup/plugin-replace';
 import preprocess from 'svelte-preprocess';
+// import url from 'postcss-url';
 
 const production = !process.env.ROLLUP_WATCH;
 
 export default {
     input: production
-        ? `src/main.js`
+        ? `src/main.ts`
         : `src/main.dev.ts`,
     output: {
         sourcemap: true,
@@ -40,9 +40,11 @@ export default {
                 cssnano(),
             ]
         }),
+
         svelte({
             // enable run-time checks when not in production
             dev: !production,
+
             // we'll extract any component CSS out into
             // a separate file - better for performance
             css: css => {
@@ -70,13 +72,7 @@ export default {
                         ],
                     ],
                 },
-                // script: ( { content } ) => {
-                //     return ts.transpileModule(content, {
-                //         compilerOptions: {
-                //
-                //         }
-                //     })
-                // },
+
                 "typescript": {
                     /**
                      * Optionally specify compiler options.
@@ -105,6 +101,7 @@ export default {
             browser: true,
             dedupe: ['svelte']
         }),
+
         commonjs(),
 
         json(),
